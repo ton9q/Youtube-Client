@@ -1,0 +1,259 @@
+@import 'reset.css';
+
+* {
+  font-size: 16px;
+}
+
+html {
+  height: 100%;
+}
+
+.root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  background: linear-gradient(45deg, rgba(103, 0, 31, 0.8), rgba(34, 101, 163, 0.5)), url(https://images.wallpaperscraft.ru/image/noutbuk_komnata_na_stole_klaviatura_myshka_apple_okno_interer_73963_1680x1050.jpg); 
+  background-size: 100% 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+}
+
+.search-box input,
+.search-box button {
+  outline: none;
+  border-radius: 8px; 
+  font-size: 20px;
+}
+
+.search-box input {
+  width: 60%;
+  padding: 4px 10px;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: transparent;
+  transition: all 0.5s linear;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.search-box input::placeholder {
+  transition: 0.3s ease-in;
+  transform-origin: 0 50%;
+}
+
+.search-box input:focus,
+.search-box input:hover {
+  border-color: rgb(255, 255, 255);
+}
+
+.search-box input:focus::placeholder,
+.search-box input:hover::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.search-box input:focus::placeholder {
+  transform: translateX(70%);
+  opacity: 0;
+
+  /* text-indent: -200px; */
+  
+  /* letter-spacing: 20px;
+  opacity: 0; */
+}
+
+.search-box button {
+  padding: 4px 10px;
+  cursor: pointer;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.5s linear;
+}
+
+.search-box button:hover {
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.cards {
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+}
+
+.wrapper {
+  width: 999999px;
+  transition: margin-left 0.5s;  /* animation from js file */
+}
+
+.card {
+  display: inline-block;
+  width: 250px;
+  height: 400px;
+  position: relative;
+  background-color: rgb(255, 255, 255); 
+  border-radius: 8px;
+  margin: auto 45px;
+  animation: slide-up 0.5s ease;
+}
+
+@keyframes slide-up {
+  0% {
+      opacity: 0;
+      transform: translateY(40px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.card img {
+  border-radius: 8px; 
+  width: 250px;
+  height: 150px;
+}
+
+.card .header {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  margin: 40px auto;
+  padding: 0 5px;
+  width: 240px;
+  max-height: 100px;
+  overflow: hidden;
+  background-color: rgba(2, 2, 2, 0.5);
+  text-decoration: underline;
+}
+
+.card .header a {
+  color: rgb(209, 209, 209);
+  font-size: 18px;
+  transition: all 0.5s linear;
+}
+
+.card .header a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.card .about {
+  margin: 10px; 
+}
+
+.card i {
+  margin-left: 15px;
+  color: rgb(145, 145, 145);
+  cursor: pointer;
+}
+
+.card .channel,
+.card .date,
+.card .views {
+  display: grid;
+  grid-template-columns: 20% auto;
+  justify-items: center;
+  padding: 8px 0; 
+  height: 10px;
+  overflow: hidden;
+}
+
+.card .description {
+  width: 90%;
+  margin: auto;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  height: 113px;
+  font-style: italic;
+  font-size: 14px; 
+}
+
+.pages {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.page-number {
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: 0;
+  padding-left: 9px; 
+  padding-top: 5px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  background-color: transparent; 
+  transition: all 0.5s linear;
+}
+
+.pages .page-number:hover {
+  background-color: rgba(209, 209, 209, 0.4);
+}
+
+.pages .numbers {
+  display: flex;
+}
+
+.pages .prev {
+  margin-right: 20px;  
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 20px solid rgba(209, 209, 209, 0.4);
+  border-bottom: 10px solid transparent;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+
+.pages .prev:hover {
+  border-right: 20px solid rgb(255, 255, 255);
+}
+
+.pages .prev:active {
+  border-right: 20px solid rgba(255,0,140,0.5);
+}
+
+.pages .next {
+  margin-left: 20px;  
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 20px solid rgba(209, 209, 209, 0.4);
+  border-bottom: 10px solid transparent;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+
+.pages .next:hover {
+  border-left: 20px solid rgb(255, 255, 255);
+}
+
+.pages .next:active {
+  border-left: 20px solid rgba(255,0,140,0.5);
+}
+
+.active {
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgba(255,0,140,0.5);
+  color: rgb(255, 255, 255);
+}
